@@ -1,20 +1,10 @@
 import { baseURL } from "@/API";
-import { useEdisonContext } from "@/context/EdisonContext";
-import { useEffect, useState } from "react";
 
 type ProductItemProps = {
   productData: IProduct;
 };
 
 export default function ProductItem({ productData }: ProductItemProps) {
-  const [quantity, setQuantity] = useState(0);
-  const { getProductQuantity, increaseCartQuantity, decreaseCartQuantity } =
-    useEdisonContext();
-
-  useEffect(() => {
-    setQuantity(getProductQuantity(productData.id));
-  }, [getProductQuantity(productData.id)]);
-
   return (
     <>
       <div className="food-card">
