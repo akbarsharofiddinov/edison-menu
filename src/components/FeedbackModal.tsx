@@ -54,8 +54,6 @@ const FeedbackModal: React.FC = () => {
           <div className="messageBox">
             <label>Ваши предложения и жалоби</label>
             <textarea
-              cols={30}
-              rows={5}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               autoComplete="off"
