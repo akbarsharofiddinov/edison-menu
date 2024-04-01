@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEdisonContext } from "@/context/EdisonContext";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { Rate } from "antd";
 
 const FeedbackModal: React.FC = () => {
   const { modal } = useEdisonContext();
+  const [kitchenRate, setKitchenRate] = useState(0);
+  const [interioRate, setInterioRate] = useState(0);
+  const [servicesRate, setServicesRate] = useState(0);
+  const [atmosphereRate, setAtpmosphereRate] = useState(0);
 
   return (
     <div className={modal ? "modal active" : "modal"}>
@@ -11,45 +15,21 @@ const FeedbackModal: React.FC = () => {
         <h1 className="title">Оцените нас!</h1>
         <form>
           <div className="ratingBoxes">
-            <div className="kitchenRating rating-box">
+            <div className="kitchen">
               <label>Кухня</label>
-              <div>
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-              </div>
+              <Rate value={kitchenRate} onChange={setKitchenRate} />
             </div>
-            <div className="interiorRating rating-box">
+            <div className="kitchen">
               <label>Интерьер</label>
-              <div>
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-              </div>
+              <Rate value={interioRate} onChange={setInterioRate} />
             </div>
-            <div className="servicesRating rating-box">
+            <div className="kitchen">
               <label>Обслуживания</label>
-              <div>
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-              </div>
+              <Rate value={servicesRate} onChange={setServicesRate} />
             </div>
-            <div className="atmosphereRating rating-box">
+            <div className="kitchen">
               <label>Атмосфера</label>
-              <div>
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-              </div>
+              <Rate value={atmosphereRate} onChange={setAtpmosphereRate} />
             </div>
           </div>
           <div className="messageBox">
