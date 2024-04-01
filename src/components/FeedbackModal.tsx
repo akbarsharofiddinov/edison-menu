@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEdisonContext } from "@/context/EdisonContext";
+import { IoCloseCircleOutline } from "react-icons/io5";
 import { Rate } from "antd";
 
 const FeedbackModal: React.FC = () => {
@@ -27,6 +28,9 @@ const FeedbackModal: React.FC = () => {
   return (
     <div className={modal ? "modal active" : "modal"}>
       <div className="feedback-inner">
+        <button className="class-btn" onClick={toggleModal}>
+          <IoCloseCircleOutline />
+        </button>
         <h1 className="title">Оцените нас!</h1>
         <form>
           <div className="ratingBoxes">

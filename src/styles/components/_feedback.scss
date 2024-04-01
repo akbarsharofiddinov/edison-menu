@@ -24,6 +24,15 @@
 
     position: relative;
 
+    .class-btn {
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      font-size: 22px;
+      right: 15px;
+      cursor: pointer;
+    }
+
     .title {
       text-align: center;
       font-size: 18px;
@@ -70,7 +79,8 @@
           gap: 6px;
           user-select: none;
 
-          li:active, li div:active {
+          li:active,
+          li div:active {
             background-color: transparent;
           }
         }
