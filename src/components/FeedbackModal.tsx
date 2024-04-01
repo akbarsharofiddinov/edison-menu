@@ -3,11 +3,26 @@ import { useEdisonContext } from "@/context/EdisonContext";
 import { Rate } from "antd";
 
 const FeedbackModal: React.FC = () => {
-  const { modal } = useEdisonContext();
+  const { modal, toggleModal } = useEdisonContext();
   const [kitchenRate, setKitchenRate] = useState(0);
   const [interioRate, setInterioRate] = useState(0);
   const [servicesRate, setServicesRate] = useState(0);
   const [atmosphereRate, setAtpmosphereRate] = useState(0);
+  const [message, setMessage] = useState("");
+
+  function handleRateSending() {
+    const data = {
+      kitchenRate,
+      interioRate,
+      servicesRate,
+      atmosphereRate,
+      message,
+    };
+
+    toggleModal();
+
+    console.log(data);
+  }
 
   return (
     <div className={modal ? "modal active" : "modal"}>
@@ -34,9 +49,22 @@ const FeedbackModal: React.FC = () => {
           </div>
           <div className="messageBox">
             <label>Ваши предложения и жалоби</label>
-            <textarea cols={30} rows={5} autoComplete="off"></textarea>
+            <textarea
+              cols={30}
+              rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              autoComplete="off"
+            ></textarea>
           </div>
-          <button>Отправить</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleRateSending();
+            }}
+          >
+            Отправить
+          </button>
         </form>
       </div>
     </div>
