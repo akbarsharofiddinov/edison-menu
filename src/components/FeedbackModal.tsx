@@ -1,5 +1,6 @@
-import { useEdisonContext } from "@/context/EdisonContext";
 import React from "react";
+import { useEdisonContext } from "@/context/EdisonContext";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const FeedbackModal: React.FC = () => {
   const { modal } = useEdisonContext();
@@ -13,41 +14,41 @@ const FeedbackModal: React.FC = () => {
             <div className="kitchenRating rating-box">
               <label>Кухня</label>
               <div>
-                <i className="fa-regular fa-star kitchenStar"></i>
-                <i className="fa-regular fa-star kitchenStar"></i>
-                <i className="fa-regular fa-star kitchenStar"></i>
-                <i className="fa-regular fa-star kitchenStar"></i>
-                <i className="fa-regular fa-star kitchenStar"></i>
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
               </div>
             </div>
             <div className="interiorRating rating-box">
               <label>Интерьер</label>
               <div>
-                <i className="fa-regular fa-star interiorStar"></i>
-                <i className="fa-regular fa-star interiorStar"></i>
-                <i className="fa-regular fa-star interiorStar"></i>
-                <i className="fa-regular fa-star interiorStar"></i>
-                <i className="fa-regular fa-star interiorStar"></i>
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
               </div>
             </div>
             <div className="servicesRating rating-box">
               <label>Обслуживания</label>
               <div>
-                <i className="fa-regular fa-star serviceStar"></i>
-                <i className="fa-regular fa-star serviceStar"></i>
-                <i className="fa-regular fa-star serviceStar"></i>
-                <i className="fa-regular fa-star serviceStar"></i>
-                <i className="fa-regular fa-star serviceStar"></i>
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
               </div>
             </div>
             <div className="atmosphereRating rating-box">
               <label>Атмосфера</label>
               <div>
-                <i className="fa-regular fa-star atmosphereStar"></i>
-                <i className="fa-regular fa-star atmosphereStar"></i>
-                <i className="fa-regular fa-star atmosphereStar"></i>
-                <i className="fa-regular fa-star atmosphereStar"></i>
-                <i className="fa-regular fa-star atmosphereStar"></i>
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
               </div>
             </div>
           </div>
