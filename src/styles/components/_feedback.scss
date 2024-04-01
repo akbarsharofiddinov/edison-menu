@@ -67,9 +67,10 @@
           display: flex;
           justify-content: space-between;
           gap: 6px;
+          user-select: none;
 
-          * {
-            cursor: pointer;
+          li:active, li div:active {
+            background-color: transparent;
           }
         }
 
