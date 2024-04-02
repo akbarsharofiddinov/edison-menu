@@ -5,6 +5,7 @@ type ProductItemProps = {
 };
 
 export default function ProductItem({ productData }: ProductItemProps) {
+  const formatCurrency = Intl.NumberFormat("en-US");
   return (
     <>
       <div className="food-card">
@@ -12,7 +13,12 @@ export default function ProductItem({ productData }: ProductItemProps) {
         <div className="food-card_body">
           <div className="top">
             <h1 className="food-name">{productData.name}</h1>
-            <p className="food-price">{productData.price} сумм</p>
+            <p className="food-price">
+              {formatCurrency
+                .format(Number.parseInt(productData.price))
+                .replace(",", " ")}{" "}
+              сум
+            </p>
           </div>
           {/* {quantity === 0 ? (
             <button
